@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Lora', serif;
+    /* font-family: 'Noto Serif', serif; */
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px;
+    font-family: 'Aboreto', cursive;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    /* position: fixed; */
+    /* border-bottom: 2px solid whitesmoke; */
+    background-color: white;
+    z-index: 999;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav img{
+    width: 50px;
+    height: 50px;
+}
+nav span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -10px;
+    font-size: .8rem;
+    padding-top: 10px;
+}
+.nav-right svg{
+    margin-left: 25px;
+}
+.nav-left a{
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.nav-left a::after{
+    content: '';
+    width: 30px;
+    height: 2px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transform: translateY(-30);
+    opacity: 0;
+    transition: .2s;
+}
+.nav-left a:hover:after,.nav-left a.selected:after{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@keyframes navAnim {
+    0%{
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+#desc{
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 80px;
+    /* background: url(image/desc.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    /* color: whitesmoke; */
+}
+#desc p span{
+    color: gray;
+}
+.name{
+    position: relative
+}
+#desc::after{
+    content: '';
+    width: 30%;
+    height: 40px;
+    background-color: wheat;
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+}
+#desc::before{
+    content: '';
+    width: 30%;
+    height: 40px;
+    background-color: wheat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+#about{
+    width: 100%;
+    padding: 80px 0;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+.about-container{
+    width: 100%;
+    display: flex;
+}
+#about h3{
+    padding-bottom: 5px;
+    padding-top: 30px;
+}
+.study{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.study img:nth-child(2){
+    width: 100px;
+}
+.study img{
+    width: 200px;
+    padding: 0 20px;
+}
+.profile{
+    width: 40%;
+    height: 780px;
+    /* background-color: rebeccapurple; */
+    background: url(image/me2.jpg);
+    filter: grayscale(1);
+    background-position: center;
+    background-size: cover;
+    border-radius: 400px;
+    border: 30px solid white;
+    box-shadow: 0px 0px 0px 3px rgb(170, 170, 170, 0.5);
+    transition: .4s;
+}
+.profile:hover{
+    filter: grayscale(.6);
+    box-shadow: 0px 0px 10px 3px rgb(170, 170, 170, 0.5);
+
+}
+.about-left, .about-right{
+    width: 30%;
+    height: 780px;
+}
+.about-left div, .about-right div{
+    width: 100%;
+    height: 260px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.about-left div p{
+    font-size: 1.1rem;
+}
+.about-right div p{
+    font-size: 3.5rem;
+}
+.about-left div h2, .about-right div h2{
+    font-family: 'Aboreto', cursive;
+    font-size: .8rem;
+    color: gray;
+    padding-bottom: 40px;
+}   
+.about-right{
+    width: 30%;
+}
+.about-right div{
+    align-items: flex-end;
+    text-align: end;
+}
+
+
+
+#skill{
+    padding: 60px 10px;
+    text-align: center;
+}
+#skill h1{
+    padding-bottom: 40px;
+}
+.skill-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+.skill-container span{
+    /* height: 200px; */
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 70px;
+    transition: .3s;
+    filter: grayscale(.85);
+}
+.skill-container span:hover{
+    filter: grayscale(0);
+}
+.skill-container span img{
+    width: 80%;
+    padding: 40px 15px;
+}
+.skill-container span:first-child{
+    padding: 10px;
+}
+.skill-name{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.skill-name h2{
+    font-size: 1.1rem;
+    padding: 8px;
+}
+
+
+
+
+#works{
+    text-align: center;
+    padding: 60px 10px;
+}

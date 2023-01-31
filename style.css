@@ -21,7 +21,7 @@ nav{
     text-align: center;
     align-items: center;
     /* position: fixed; */
-    /* border-bottom: 2px solid whitesmoke; */
+    border-bottom: 2px solid whitesmoke;
     background-color: white;
     z-index: 999;
 }

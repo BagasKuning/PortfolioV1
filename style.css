@@ -6,6 +6,7 @@
 }
 body{
     font-family: 'Lora', serif;
+    width: 100%;
     /* font-family: 'Noto Serif', serif; */
 }
 
@@ -397,6 +398,9 @@ nav span{
     .project{
         padding-bottom: 15px;
     }
+    .profile{
+        height: 500px;
+    }
     
 }
 
@@ -441,5 +445,8 @@ nav span{
     }
     nav span{
         z-index: 99;
+    }
+    .profile{
+        height: 400px;
     }
 }

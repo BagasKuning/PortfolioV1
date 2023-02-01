@@ -289,9 +289,12 @@ nav span{
 .project{
     padding: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: repeat(3, 1fr) ;
+    /* grid-auto-flow: column; */
     width: 100%;
     gap: 40px;
+    place-content: center;
+    /* place-items: center; */
 }
 .project img{
     width: 100%;
@@ -317,6 +320,7 @@ nav span{
 }
 .project a{
     text-decoration: none;
+    width: 100%;
 }
 
 
@@ -405,14 +409,38 @@ nav span{
 }
 
 @media only screen and (max-width: 530px){
+    .about-left, .about-right{
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+    }
     .about-left div p{
         font-size: .7rem;
+    }
+    .about-left div:nth-child(1), .about-right div:nth-child(1){
+        width: 50%;
+    }
+    .about-left div:nth-child(2), .about-right div:nth-child(2){
+        width: 50%;
+    }
+    .about-left div:nth-child(3){
+        margin-bottom: 20px;
+    }
+    .about-right div{
+        align-items: center;
+        /* padding: 0px; */
+        height: auto;
+    }
+    .study{
+        flex-wrap: wrap;
+    }
+    .study img{
+        width: 120px;
     }
     #desc{
         font-size: 1.8rem;
     }
     .project{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     nav{
         flex-direction: column-reverse;
@@ -448,5 +476,36 @@ nav span{
     }
     .profile{
         height: 400px;
+    }
+    .skill-container span:first-child{
+        padding: 0;
+    }
+    .skill-container span img{
+        width: 100%;
+    }
+    #skill h1{
+        padding: 20px;
+    }
+    .project span h1{
+        font-size: .9rem;
+    }
+}
+
+
+
+
+
+
+/* Responsive */
+@media only screen and (max-width: 340px){
+    #desc{
+        font-size: 1.3rem;
+        padding: 38px;
+    }
+    #works h1{
+        font-size: 1.3rem;
+    }
+    #works .project span h1{
+        font-size: .9rem;
     }
 }

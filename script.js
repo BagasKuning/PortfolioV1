@@ -8,7 +8,7 @@ const descAfter = this.document.getElementsByClassName('desc-after')[0]
 const descHeight = desc.offsetHeight / 4;
 
 nav2.style.height = nav.offsetHeight + 'px';
-nav2.style.width = nav.offsetWidth + 'px';
+nav2.style.width = '100%';
 nav2.style.position = 'fixed';
 
 desc.addEventListener('mouseenter', function(){

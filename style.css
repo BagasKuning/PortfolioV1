@@ -9,6 +9,21 @@ body{
     width: 100%;
     /* font-family: 'Noto Serif', serif; */
 }
+body::-webkit-scrollbar {
+    width: 0.45em;
+    background-color: #F5F5F5;
+  } 
+body::-webkit-scrollbar-thumb {
+    background-color: #0000009c;
+    border-radius: 30px;
+} 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+  }
+
+
+
 
 nav{
     display: flex;
@@ -101,7 +116,7 @@ nav span{
 .desc-before{
     width: 30%;
     height: 40px;
-    background-color: wheat;
+    background-color: #6d7c62;
     position: absolute;
     top: 0;
     left: 0;
@@ -123,7 +138,7 @@ nav span{
 .desc-after{
     width: 30%;
     height: 40px;
-    background-color: wheat;
+    background-color: #6d7c62;
     position: absolute; 
     bottom: 0;
     right: 0;
@@ -146,85 +161,74 @@ nav span{
 
 
 
-
 #about{
-    width: 100%;
-    padding: 80px 0;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   justify-content: center;
-}
-.about-container{
-    width: 100%;
     display: flex;
-}
-#about h3{
-    padding-bottom: 5px;
-    padding-top: 30px;
-}
-.study{
-    display: flex;
+    align-items: center;
     width: 100%;
+    /* height: 100vh; */
+    padding: 60px 0;
+    flex-wrap: wrap;
+}
+.about-left{
+    width: 40%;
+    height: 100%;
+    /* background-color: aliceblue; */
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.study img:nth-child(2){
-    width: 100px;
-}
-.study img{
-    width: 200px;
-    padding: 0 20px;
-}
-.profile{
-    width: 40%;
-    height: 780px;
-    /* background-color: rebeccapurple; */
-    background: url(image/me2.jpg);
-    filter: grayscale(1);
+.about-left span{
+    width: 300px;
+    height: 300px;
+    background: url(image/me.jpg);
     background-position: center;
     background-size: cover;
-    border-radius: 400px;
-    border: 30px solid white;
-    box-shadow: 0px 0px 0px 3px rgb(170, 170, 170, 0.5);
-    transition: .4s;
+    box-shadow: -20px -25px 0px 10px gainsboro;
+    position: relative;
 }
-.profile:hover{
-    filter: grayscale(.6);
-    box-shadow: 0px 0px 10px 3px rgb(170, 170, 170, 0.5);
-
-}
-.about-left, .about-right{
-    width: 30%;
-    height: 780px;
-}
-.about-left div, .about-right div{
+.about-left span::after{
+    content: '';
     width: 100%;
-    height: 260px;
-    padding: 30px;
+    height: 100%;
+    /* transform: translate(20px,20px); */
+    /* background-color: gray; */
+    box-shadow: 20px 25px 0px 10px gray;
+    position: absolute;
+}
+.about-left img{
+    object-fit: cover;
+}
+.about-right{
+    width: 60%;
+    height: 100%;
+    /* background-color: skyblue; */
     display: flex;
     justify-content: center;
+    padding: 35px;
     flex-direction: column;
 }
-.about-left div p{
-    font-size: 1.1rem;
-}
-.about-right div p{
-    font-size: 3.5rem;
-}
-.about-left div h2, .about-right div h2{
+.about-right h1{
+    padding-bottom: 30px;
     font-family: 'Aboreto', cursive;
-    font-size: .8rem;
-    color: gray;
-    padding-bottom: 40px;
-}   
-.about-right{
-    width: 30%;
 }
-.about-right div{
-    align-items: flex-end;
-    text-align: end;
+.about-right p{
+    padding-bottom: 8px;
 }
+.about-skill{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.about-skill svg{
+    margin-right: 10px;
+    color: green;
+}
+.about-skill li{
+    display: flex;
+}
+
+
+
+
 
 
 
@@ -270,15 +274,6 @@ nav span{
     padding-bottom: 10px;
     font-size: 1rem;
 }
-/* .skill-name{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-}
-.skill-name h2{
-    font-size: 1.1rem;
-    padding: 8px;
-} */
-
 
 
 
@@ -286,13 +281,16 @@ nav span{
     text-align: center;
     padding: 60px 10px;
 }
+#works h1{
+    margin-bottom: 30px;
+}
 .project{
-    padding: 40px;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
     /* grid-auto-flow: column; */
     width: 100%;
-    gap: 40px;
+    gap: 10px 40px;
     place-content: center;
     /* place-items: center; */
 }
@@ -310,7 +308,7 @@ nav span{
     text-align: left;
     padding: 20px;
 }
-.project span h1{
+.project span h2{
     font-size: 1.4rem;
     color: black;
 }
@@ -322,6 +320,79 @@ nav span{
     text-decoration: none;
     width: 100%;
 }
+
+
+
+#contact{
+    width: 100%;
+    margin: 20px 0;
+}
+.contact-container{
+    min-width: 100px;
+    max-width: 700px;
+    margin: auto;
+    background: linear-gradient(40deg, #6d7c62, #243319);
+    background-size: 300% 300%;
+    animation-duration: 8s;
+    animation-name: linear;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    text-align: center;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-radius: 5px;
+    padding: 20px;
+    gap: 10px;
+    color: whitesmoke;
+}
+@keyframes linear{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.contact-container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contact-container svg{
+    width: 50px;
+    height: 50px;
+    color: white;
+    padding: 10px;
+}
+.contact-container h2{
+    font-size: 1rem;
+}
+.contact-container p{
+    margin-bottom: 5px;
+}
+@keyframes background-animation {
+    0% {
+      background-color: #6d7c62;
+    }
+    50% {
+      background-color: whitesmoke;
+    }
+    100% {
+      background-color: #6d7c62;
+    }
+  }
+
+
+
+
+
+
 
 
 
@@ -339,11 +410,21 @@ nav span{
 
 
 @media only screen and (max-width: 885px){
-    .about-left div p{
-        font-size: .85rem;
+    #about{
+        padding: 30px 0;
     }
-    .about-right div p{
-        font-size: 2.5rem;
+    .about-skill, .about-right p{
+        font-size: .8rem;
+    }
+    .about-right h1{
+        font-size: 1.8rem;
+    }
+    .about-right svg{
+        padding: 3px;
+    }
+    .about-left span{
+        width: 180px;
+        height: 180px;
     }
     .study img{
         width: 150px;
@@ -367,6 +448,9 @@ nav span{
     .project span p{
         font-size: .7rem;
     }
+    #works{
+        padding: 10px;
+    }
 }
 
 @media only screen and (max-width: 700px){
@@ -376,25 +460,6 @@ nav span{
     .skill-container{
         grid-template-columns: 1fr 1fr 1fr;
         padding: 40px;
-    }
-    .about-container{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .about-left, .about-right{
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
-    .about-left div{
-        height: auto;
-    }
-    .profile{
-        width: 80%;
-    }
-    .about-right div h2, .about-left div{
-        text-align: center;
     }
     #works{
         padding-bottom: 0;
@@ -409,27 +474,36 @@ nav span{
 }
 
 @media only screen and (max-width: 530px){
-    .about-left, .about-right{
-        flex-wrap: wrap;
-        padding-bottom: 10px;
+    #about{
+        flex-direction: column;
+        padding-bottom: 0px;
     }
-    .about-left div p{
-        font-size: .7rem;
+    .about-left{
+        margin: 30px;
     }
-    .about-left div:nth-child(1), .about-right div:nth-child(1){
-        width: 50%;
-    }
-    .about-left div:nth-child(2), .about-right div:nth-child(2){
-        width: 50%;
-    }
-    .about-left div:nth-child(3){
-        margin-bottom: 20px;
-    }
-    .about-right div{
+    .about-right{
+        width: 80%;
         align-items: center;
-        /* padding: 0px; */
-        height: auto;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
     }
+    .about-right p{
+        font-size: 1rem;
+    }
+    .about-right h1{
+        font-size: 2em;
+    }
+    .about-skill svg{
+        padding: 0;
+    }
+    .about-skill{
+        font-size: 1rem;
+    }
+    .about-right{
+        padding: 25px;
+    }
+    
     .study{
         flex-wrap: wrap;
     }
@@ -458,9 +532,6 @@ nav span{
         justify-content: center;
         align-items: center;
     }
-    .about-left div{
-        padding: 10px;
-    }
     nav img{
         width: 30px;
         height: auto;
@@ -486,9 +557,25 @@ nav span{
     #skill h1{
         padding: 20px;
     }
-    .project span h1{
+    .project span h2{
         font-size: .9rem;
     }
+
+    
+    .contact-container svg{
+        width: 40px;
+        height: 40px;
+        color: whitesmoke;
+        padding: 10px;
+    }
+    .contact-container h2{
+        font-size: .8rem;
+    }
+    .contact-container p{
+        margin-bottom: 5px;
+        font-size: .6rem;
+    }
+    
 }
 
 
@@ -496,16 +583,31 @@ nav span{
 
 
 
-/* Responsive */
+/* samsung galaxy fold */
 @media only screen and (max-width: 340px){
     #desc{
         font-size: 1.3rem;
         padding: 38px;
     }
-    #works h1{
-        font-size: 1.3rem;
-    }
-    #works .project span h1{
+    #works .project span h2{
         font-size: .9rem;
+    }
+    .skill-container{
+        padding: 10px;
+    }
+    .project{
+        padding: 10px;
+    }
+    #works h1{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .about-left{
+        width: 100%;
+        margin: 30px 0px;
+    }
+    .about-left span{
+        width: 60%;
     }
 }

@@ -31,16 +31,27 @@ window.addEventListener('scroll', function(){
         nav2.style.position = 'fixed';
         // desc.removeAttribute('style');
     }
-    
-    if(x < desc.offsetHeight - nav.offsetHeight){
-        descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';
-        descAfter.style.animation = 'descAfterAnim 1.1s ease-out forwards';
-    } else {
-        descBefore.removeAttribute('style')
-        descAfter.removeAttribute('style')
-    }
-
-
     })
 
+
+
+    const observer = new IntersectionObserver((enteries) => {
+        enteries.forEach((entry) => {
+            console.log(entry)
+            if(entry.isIntersecting) {
+                entry.target.classList.add('black-to-gray');
+                descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';
+                descAfter.style.animation = 'descAfterAnim 1.1s ease-out forwards';
+            } else {
+                entry.target.classList.remove('black-to-gray');
+                descBefore.removeAttribute('style')
+                descAfter.removeAttribute('style')
+            };
+        })
+    });
+
+    const descSpan = desc.querySelectorAll("span");
+    descSpan.forEach((el) => observer.observe(el));
+    console.log(descSpan)
+    
     

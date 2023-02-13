@@ -205,6 +205,7 @@ nav span{
     display: flex;
     justify-content: center;
     padding: 35px;
+    padding-right: 50px;
     flex-direction: column;
 }
 .about-right h1{
@@ -609,5 +610,25 @@ nav span{
     }
     .about-left span{
         width: 60%;
+    }
+}
+
+
+
+
+
+
+
+
+/* animation */
+.black-to-gray {
+    animation: desc-span 1.5s;
+}
+@keyframes desc-span{
+    from{
+        color: black;
+    }
+    to{
+        color: gray;
     }
 }

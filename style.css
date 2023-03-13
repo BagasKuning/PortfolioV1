@@ -297,13 +297,13 @@ nav span{
 }
 .project img{
     width: 100%;
-    filter: grayscale(.8);
+    /* filter: grayscale(.8); */
     box-shadow: 0px 0px 2px black;
     transition: .3s;
 }
 .project img:hover{
     filter: grayscale(0);
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 6px black;
 }
 .project span{
     text-align: left;
@@ -316,6 +316,8 @@ nav span{
 .project span p{
     font-size: .8rem;
     color: gray;
+    line-height: 15px;
+    padding-top: 10px;
 }
 .project a{
     text-decoration: none;
@@ -560,6 +562,9 @@ nav span{
     }
     .project span h2{
         font-size: .9rem;
+    }
+    .project span {
+        text-align: center;
     }
 
     

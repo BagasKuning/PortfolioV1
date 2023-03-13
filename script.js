@@ -52,6 +52,5 @@ window.addEventListener('scroll', function(){
 
     const descSpan = desc.querySelectorAll("span");
     descSpan.forEach((el) => observer.observe(el));
-    console.log(descSpan)
     
     

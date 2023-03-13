@@ -298,12 +298,12 @@ nav span{
 .project img{
     width: 100%;
     /* filter: grayscale(.8); */
-    box-shadow: 0px 0px 2px black;
+    box-shadow: 0px 0px 1px black;
     transition: .3s;
 }
 .project img:hover{
     filter: grayscale(0);
-    box-shadow: 0px 0px 6px black;
+    box-shadow: 0px 0px 3px black;
 }
 .project span{
     text-align: left;

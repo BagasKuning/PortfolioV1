@@ -37,7 +37,6 @@ window.addEventListener('scroll', function(){
 
     const observer = new IntersectionObserver((enteries) => {
         enteries.forEach((entry) => {
-            console.log(entry)
             if(entry.isIntersecting) {
                 entry.target.classList.add('black-to-gray');
                 descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';

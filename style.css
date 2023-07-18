@@ -5,7 +5,7 @@
     scroll-behavior: smooth;
 }
 body{
-    font-family: 'Lora', serif;
+    font-family: 'Roboto Slab', serif;
     width: 100%;
 }
 body::-webkit-scrollbar {
@@ -104,7 +104,7 @@ nav span{
     position: relative;
 }
 #desc p span{
-    color: gray;
+    color: #91ac7d;
 }
 .name{
     position: relative
@@ -207,6 +207,8 @@ nav span{
 }
 .about-right p{
     padding-bottom: 10px;
+    letter-spacing: .4px;
+    word-spacing: .9px;
 }
 .about-skill{
     display: grid;
@@ -630,6 +632,6 @@ nav span{
         color: black;
     }
     to{
-        color: gray;
+        color: #91ac7d;
     }
 }

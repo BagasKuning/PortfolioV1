@@ -55,8 +55,9 @@ nav span{
     font-size: .8rem;
     padding-top: 10px;
 }
-.nav-right svg{
+.nav-right a{
     margin-left: 25px;
+    position: relative;
 }
 .nav-left a{
     margin: 15px;

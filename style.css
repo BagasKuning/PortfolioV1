@@ -220,6 +220,8 @@ nav span{
 }
 .about-skill li{
     display: flex;
+    align-items: center;
+    margin-bottom: 3.5px;
 }
 
 

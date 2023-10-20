@@ -31,7 +31,7 @@ window.addEventListener('scroll', function(){
         nav2.style.position = 'fixed';
         // desc.removeAttribute('style');
     }
-    })
+})
 
 
 

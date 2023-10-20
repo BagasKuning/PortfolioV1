@@ -23,7 +23,6 @@ body::-webkit-scrollbar-track {
 
 
 
-
 nav{
     display: flex;
     width: 100%;
@@ -287,7 +286,8 @@ nav span{
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
-    width: 100%;
+    max-width: 1250px;
+    margin: auto;
     gap: 10px 40px;
     place-content: center;
 }
@@ -444,11 +444,17 @@ nav span{
     .project span h1{
         font-size: 1.1rem;
     }
-    .project span p{
-        font-size: .7rem;
-    }
     #works{
         padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .project{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .third-project{
+        transform: translateX(60%);
     }
 }
 
@@ -469,7 +475,9 @@ nav span{
     .profile{
         height: 500px;
     }
-    
+    .project span p{
+        font-size: .85rem;
+    }
 }
 
 @media only screen and (max-width: 530px){
@@ -584,6 +592,30 @@ nav span{
 
 
 
+@media only screen and (max-width: 450px){
+    #works{
+        margin-top: 48px;
+    }
+    .project{
+        grid-template-columns: 1fr;
+    }
+    .project a{
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .project img{
+        width: 80%;
+    }
+    .third-project{
+        transform: translateX(0%);
+    }
+    .project span{
+        padding-top: 7px;
+    }
+}
+
 
 
 
@@ -601,6 +633,7 @@ nav span{
     }
     .project{
         padding: 10px;
+        grid-template-columns: 1fr;
     }
     #works h1{
         font-size: 1.5rem;

@@ -21,11 +21,15 @@ body::-webkit-scrollbar-track {
     background-color: #F5F5F5;
   }
 
+.container{
+    max-width: 1240px;
+}
 
 
 nav{
     display: flex;
     width: 100%;
+    margin: auto;
     justify-content: space-around;
     padding: 15px;
     font-family: 'Aboreto', cursive;
@@ -161,6 +165,7 @@ nav span{
     width: 100%;
     padding: 60px 0;
     flex-wrap: wrap;
+    margin: auto;
 }
 .about-left{
     width: 40%;
@@ -446,6 +451,22 @@ nav span{
     }
     #works{
         padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 1458px){
+    #desc{
+        font-size: 3rem;
+    }
+    .about-right p{
+        padding-bottom: 10px;
+        letter-spacing: .4px;
+        word-spacing: .9px;
+        font-size: 1.2rem;
+    }
+    .project span p{
+        font-size: 1rem;
+        line-height: 18px;
     }
 }
 

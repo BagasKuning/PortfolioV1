@@ -1,4 +1,4 @@
-const nav = document.getElementsByTagName('nav')[0]
+const nav = document.getElementById('navbar')
 const desc = this.document.getElementById('desc')
 const nav2 = document.getElementsByClassName('nav')[0]
 

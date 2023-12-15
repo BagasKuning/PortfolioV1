@@ -6,7 +6,8 @@
 }
 body{
     font-family: 'Roboto Slab', serif;
-    width: 100%;
+    width: 100vw;
+    /* overflow-x: hidden; */
 }
 body::-webkit-scrollbar {
     width: 0.45em;
@@ -26,6 +27,15 @@ body::-webkit-scrollbar-track {
 }
 
 
+#navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid whitesmoke;
+    background-color: white;
+    z-index: 999;
+}
 nav{
     display: flex;
     width: 100%;
@@ -37,9 +47,7 @@ nav{
     font-size: 1rem;
     text-align: center;
     align-items: center;
-    border-bottom: 2px solid whitesmoke;
     background-color: white;
-    z-index: 999;
 }
 nav a{
     text-decoration: none;

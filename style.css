@@ -290,7 +290,7 @@ nav span{
 .project{
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr) ;
+    grid-template-columns: repeat(4, 1fr) ;
     max-width: 1250px;
     margin: auto;
     gap: 10px 40px;
@@ -299,6 +299,7 @@ nav span{
 .project img{
     width: 100%;
     object-fit: cover;
+    border-radius: 3.2px;
     box-shadow: 0px 0px 1px black;
     transition: .3s;
 }
@@ -474,9 +475,6 @@ nav span{
     .project{
         grid-template-columns: repeat(2, 1fr);
     }
-    .third-project{
-        transform: translateX(60%);
-    }
 }
 
 @media only screen and (max-width: 700px){
@@ -628,9 +626,6 @@ nav span{
     }
     .project img{
         width: 80%;
-    }
-    .third-project{
-        transform: translateX(0%);
     }
     .project span{
         padding-top: 7px;

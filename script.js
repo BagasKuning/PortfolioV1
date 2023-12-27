@@ -9,47 +9,55 @@ const descHeight = desc.offsetHeight / 4;
 
 nav2.style.height = nav.offsetHeight + 'px';
 nav2.style.width = '100%';
-nav2.style.position = 'fixed';
 
-desc.addEventListener('mouseenter', function(){
+window.addEventListener("resize", () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth > 530) {
+        nav2.style.height = nav.offsetHeight + 'px';
+    } else {
+        nav2.style.height = nav.offsetHeight + 'px';
+    }
+
+})
+
+desc.addEventListener('mouseenter', function () {
     descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';
     descAfter.style.animation = 'descAfterAnim 1.1s ease-out forwards';
 })
 
-window.addEventListener('scroll', function(){
+const navLeft = document.getElementsByClassName("nav-left")[0]
+const navMid = nav.childNodes[3]
+const navRight = document.getElementsByClassName("nav-right")[0]
+
+window.addEventListener('scroll', function () {
     let x = window.scrollY
-    
-    if(x > nav.offsetHeight){
-        nav.style.position = "fixed";
-        nav.style.top = "0px";
-        nav.style.animation = "navAnim .6s";
-        nav.style.borderBottom = '3px solid whitesmoke';
-        nav2.style.position = 'relative';
-    } else {  
-        nav.style.position = "static";
+
+    if (x > nav.offsetHeight) {
         nav.removeAttribute('style');
-        nav2.style.position = 'fixed';
-        // desc.removeAttribute('style');
+        navMid.removeAttribute('style');
+    } else {
+        nav.style.animation = "navAnimBack 1.1s";
+        navMid.style.animation = "navAnimMid 1.1s";
+        nav.style.zIndex = 1
     }
 })
 
 
 
-    const observer = new IntersectionObserver((enteries) => {
-        enteries.forEach((entry) => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('black-to-gray');
-                descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';
-                descAfter.style.animation = 'descAfterAnim 1.1s ease-out forwards';
-            } else {
-                entry.target.classList.remove('black-to-gray');
-                descBefore.removeAttribute('style')
-                descAfter.removeAttribute('style')
-            };
-        })
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('black-to-gray');
+            descBefore.style.animation = 'descBeforeAnim 1.1s ease-out forwards';
+            descAfter.style.animation = 'descAfterAnim 1.1s ease-out forwards';
+        } else {
+            entry.target.classList.remove('black-to-gray');
+            descBefore.removeAttribute('style');
+            descAfter.removeAttribute('style');
+        }
     });
+}, { rootMargin: '180px 0px' }); // Adjust the rootMargin as needed
 
-    const descSpan = desc.querySelectorAll("span");
-    descSpan.forEach((el) => observer.observe(el));
-    
-    
+const descSpan = desc.querySelectorAll("span");
+descSpan.forEach((el) => observer.observe(el));

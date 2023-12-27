@@ -4,6 +4,11 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+:root {
+    --bg-body: white;
+  }
+
 body{
     font-family: 'Roboto Slab', serif;
     width: 100%;
@@ -25,21 +30,29 @@ body::-webkit-scrollbar-track {
     max-width: 1240px;
 }
 
-
+.nav{
+    position: static;
+    z-index: -2;
+}
 nav{
     display: flex;
+
+    position: fixed;
+    top: 0;
+    border-bottom: 3px solid whitesmoke;
+
     width: 100%;
     margin: auto;
     justify-content: space-around;
-    padding: 15px;
+    padding: 16px 25px;;
     font-family: 'Aboreto', cursive;
     font-weight: bold;
     font-size: 1rem;
     text-align: center;
     align-items: center;
     border-bottom: 2px solid whitesmoke;
-    background-color: white;
-    z-index: 999;
+    background-color: var(--bg-body);
+    z-index: -1;
 }
 nav a{
     text-decoration: none;
@@ -58,12 +71,23 @@ nav span{
     font-size: .8rem;
     padding-top: 10px;
 }
+nav span a{
+    display: none;
+}
+
+.nav-right{
+    display: flex;
+    gap: 25px;
+}
 .nav-right a{
-    margin-left: 25px;
     position: relative;
 }
+
+.nav-left{
+    display: flex;
+    gap: 15px;
+}
 .nav-left a{
-    margin: 15px;
     position: relative;
     overflow: hidden;
 }
@@ -85,7 +109,7 @@ nav span{
     opacity: 1;
 }
 
-@keyframes navAnim {
+/* @keyframes navAnim {
     0%{
         opacity: 0;
         transform: translateY(-10px);
@@ -94,7 +118,29 @@ nav span{
         opacity: 1;
         transform: translateY(0px);
     }
+} */
+
+@keyframes navAnimBack {
+    0%{
+        opacity: 0;
+        transform: translateY(-14px);
+        padding: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+        padding: 16px 25px;
+    }
 }
+@keyframes navAnimMid {
+    0%{
+        gap: 50px;
+    }
+    100%{
+        gap: 25px;
+    }
+}
+
 
 
 
@@ -106,6 +152,9 @@ nav span{
     background-position: center;
     background-size: cover;
     position: relative;
+    
+    z-index: 999;
+    background-color: var(--bg-body);
 }
 #desc p span{
     color: #91ac7d;
@@ -166,6 +215,7 @@ nav span{
     padding: 60px 0;
     flex-wrap: wrap;
     margin: auto;
+    background-color: var(--bg-body);
 }
 .about-left{
     width: 40%;
@@ -238,6 +288,7 @@ nav span{
 #skill{
     padding: 60px 10px;
     text-align: center;
+    background-color: var(--bg-body);
 }
 #skill h1{
     padding-bottom: 40px;
@@ -250,7 +301,6 @@ nav span{
     padding: 20px;
 }
 .skill-container span{
-    /* height: 200px; */
     background-color: whitesmoke;
     display: flex;
     align-items: center;
@@ -283,6 +333,7 @@ nav span{
 #works{
     text-align: center;
     padding: 60px 10px;
+    background-color: var(--bg-body);
 }
 #works h1{
     margin-bottom: 30px;
@@ -330,7 +381,8 @@ nav span{
 
 #contact{
     width: 100%;
-    margin: 20px 0;
+    padding: 20px 0;
+    background-color: var(--bg-body);
 }
 .contact-container{
     min-width: 100px;
@@ -544,21 +596,17 @@ nav span{
     .project{
         grid-template-columns: repeat(2, 1fr);
     }
-    nav{
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+
+    nav span{
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+    }
+    nav span a{
+        display: inline;
     }
     .nav-left{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: none;
     }
     nav img{
         width: 30px;
@@ -569,9 +617,6 @@ nav span{
     }
     .nav-right{
         display: none;
-    }
-    nav span{
-        z-index: 99;
     }
     .profile{
         height: 400px;
@@ -667,10 +712,6 @@ nav span{
         width: 100%;
     }
 }
-
-
-
-
 
 
 

@@ -10,6 +10,7 @@ const descHeight = desc.offsetHeight / 4;
 nav2.style.height = nav.offsetHeight + 'px';
 nav2.style.width = '100%';
 
+
 window.addEventListener("resize", () => {
     const windowWidth = window.innerWidth;
 
@@ -30,18 +31,51 @@ const navLeft = document.getElementsByClassName("nav-left")[0]
 const navMid = nav.childNodes[3]
 const navRight = document.getElementsByClassName("nav-right")[0]
 
-window.addEventListener('scroll', function () {
-    let x = window.scrollY
+// Penanda apakah animasi sudah dijalankan
+let animationRan = false;
+
+// Fungsi untuk menangani scroll
+function handleScroll() {
+    let x = window.scrollY;
 
     if (x > nav.offsetHeight) {
-        nav.removeAttribute('style');
-        navMid.removeAttribute('style');
-    } else {
-        nav.style.animation = "navAnimBack 1.1s";
-        navMid.style.animation = "navAnimMid 1.1s";
-        nav.style.zIndex = 1
+        // Ketika scroll Y melebihi tinggi nav, atur opacity ke 0
+        nav.style.opacity = 0;
+    } else if(x === 0 && !animationRan){
+        // Ketika scroll Y kurang dari atau sama dengan tinggi nav, atur opacity ke 1
+        nav.style.opacity = 1;
     }
-})
+
+    if (x === 0 && !animationRan) {
+        // Animasi hanya dijalankan ketika scroll Y mencapai 0 dan animasi belum dijalankan
+        nav.style.animation = "navAnimBack .9s";
+        navMid.style.animation = "navAnimMid .9s";
+        nav.style.zIndex = 1;
+
+        // Menandai bahwa animasi sudah dijalankan
+        animationRan = true;
+
+        // Menambahkan event listener untuk menangkap akhir animasi
+        nav.addEventListener('animationend', handleAnimationEnd, { once: true });
+        navMid.addEventListener('animationend', handleAnimationEnd, { once: true });
+    } else if (x > 0 && x <= nav.offsetHeight) {
+        // Reset penanda jika scroll Y bukan 0 dan kurang dari atau sama dengan tinggi nav
+        animationRan = false;
+    }
+}
+
+// Fungsi untuk menangani akhir animasi
+function handleAnimationEnd() {
+    // Menghapus animasi setelah selesai
+    nav.style.animation = '';
+    navMid.style.animation = '';
+    // Mengembalikan elemen ke keadaan awal jika diperlukan
+    nav.style.zIndex = ''; // Contoh: Mengembalikan zIndex ke nilai default
+}
+
+// Menambahkan event listener untuk mendeteksi scroll
+window.addEventListener('scroll', handleScroll);
+
 
 
 

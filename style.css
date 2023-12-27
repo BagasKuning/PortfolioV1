@@ -551,7 +551,7 @@ nav span a{
     }
 }
 
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 650px){
     #about{
         flex-direction: column;
         padding-bottom: 0px;
@@ -567,6 +567,7 @@ nav span a{
         justify-content: center;
         align-self: center;
         text-align: center;
+        padding: 25px 0;
     }
     .about-right p{
         font-size: 1rem;
@@ -579,9 +580,6 @@ nav span a{
     }
     .about-skill{
         font-size: 1rem;
-    }
-    .about-right{
-        padding: 25px;
     }
     
     .study{

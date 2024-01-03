@@ -48,8 +48,8 @@ function handleScroll() {
 
     if (x === 0 && !animationRan) {
         // Animasi hanya dijalankan ketika scroll Y mencapai 0 dan animasi belum dijalankan
-        nav.style.animation = "navAnimBack .9s";
-        navMid.style.animation = "navAnimMid .9s";
+        nav.style.animation = "navAnimBack .5s";
+        navMid.style.animation = "navAnimMid .5s";
         nav.style.zIndex = 1;
 
         // Menandai bahwa animasi sudah dijalankan

@@ -32,7 +32,7 @@ body::-webkit-scrollbar-track {
 
 .nav{
     position: static;
-    z-index: 0;
+    z-index: -1;
 }
 nav{
     display: flex;
@@ -215,6 +215,8 @@ nav span a{
     padding: 60px 0;
     flex-wrap: wrap;
     margin: auto;
+
+    z-index: 999;
     background-color: var(--bg-body);
 }
 .about-left{
@@ -368,7 +370,7 @@ nav span a{
 }
 .project span p{
     font-size: .86rem;
-    color: gray;
+    color: #0e0e0e;
     line-height: 15px;
     padding-top: 10px;
 }
@@ -386,21 +388,20 @@ nav span a{
 }
 .contact-container{
     min-width: 100px;
-    max-width: 700px;
+    max-width: 660px;
     margin: auto;
-    background: linear-gradient(40deg, #6d7c62, #243319);
+    /* background: linear-gradient(40deg, #6d7c62, #243319); */
+    background-color: #3f5033;
     background-size: 300% 300%;
     animation-duration: 8s;
     animation-name: linear;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    text-align: center;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    border-radius: 5px;
-    padding: 20px;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 7.5px;
+    padding: 15px 60px;
     color: whitesmoke;
 }
 @keyframes linear{
@@ -415,17 +416,46 @@ nav span a{
     }
 }
 
-.contact-container div{
+/* .contact-container div{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+} */
+.contact-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.contact-container svg{
+.contact-left{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.contact-left div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 0px 7px 7px 0px;
+
+    /* PROBLEM HERE */
+    transition: .6s;
+}
+.contact-left div:hover{
+    background-image: linear-gradient(90deg, #3f5033, #ffffff40);
+}
+
+.contact-left svg{
     width: 50px;
     height: 50px;
     color: white;
     padding: 10px;
+}
+.location svg{
+    width: 60px;
+    height: 60px;
 }
 .contact-container h2{
     font-size: 1rem;
@@ -456,7 +486,7 @@ nav span a{
 #footer{
     text-align: center;
     padding: 20px;
-    color: gray;
+    color: #0e0e0e;
     font-size: 1.1rem;
 }
 #footer a{
@@ -636,22 +666,24 @@ nav span a{
     }
 
     
-    .contact-container svg{
-        width: 40px;
-        height: 40px;
-        color: whitesmoke;
-        padding: 10px;
+    .contact-container{
+        padding: 14px 20px;
     }
     .contact-container h2{
         font-size: .8rem;
     }
     .contact-container p{
         margin-bottom: 5px;
-        font-size: .6rem;
+        font-size: .8rem;
     }
     
 }
 
+@media only screen and (max-width: 510px){
+    .contact-container{
+        padding: 10px 0px 10px 14px;
+    }
+}
 
 
 @media only screen and (max-width: 450px){
@@ -673,7 +705,26 @@ nav span a{
     .project span{
         padding-top: 7px;
     }
+
+@media only screen and (max-width: 450px){
+    .contact-container svg{
+        width: 40px;
+        height: 40px;
+        color: whitesmoke;
+        padding: 10px;
+    }
+    .location svg{
+        width: 45px;
+        height: 45px;
+    }
+    .contact-container h2{
+        font-size: .6rem;
+    }
+    .contact-container p{
+        font-size: .5rem;
+    }
 }
+
 
 
 
@@ -718,6 +769,7 @@ nav span a{
 .black-to-gray {
     animation: desc-span 1.5s;
 }
+
 @keyframes desc-span{
     from{
         color: black;
@@ -725,4 +777,5 @@ nav span a{
     to{
         color: #91ac7d;
     }
-}
+}}
+/* PROBLEM di atas(ntah dari mana itu kurung asal kurawal tapi code berjalan bagus aja) */

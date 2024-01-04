@@ -91,7 +91,27 @@ const observer = new IntersectionObserver((entries) => {
             descAfter.removeAttribute('style');
         }
     });
-}, { rootMargin: '180px 0px' }); // Adjust the rootMargin as needed
+}, { rootMargin: '180px 0px' });
 
 const descSpan = desc.querySelectorAll("span");
 descSpan.forEach((el) => observer.observe(el));
+
+
+
+
+
+// animasi contact
+const contact = document.querySelectorAll(".contact-left div");
+const contactLeft = document.querySelector('.contact-left');
+const contactPointer = document.getElementsByClassName("contact-pointer")[0];
+
+contactPointer.style.height = `${contact[0].clientHeight}px`;
+contactPointer.style.top = `${contact[0].offsetTop}px`;
+
+contact.forEach(item => {
+    item.addEventListener("mouseover", () => {
+        // Mengatur tinggi dan posisi top pointer sesuai dengan elemen yang dihover
+        contactPointer.style.height = `${item.clientHeight}px`;
+        contactPointer.style.top = `${item.offsetTop}px`;
+    });
+});

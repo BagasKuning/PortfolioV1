@@ -30,6 +30,10 @@ body::-webkit-scrollbar-track {
     max-width: 1240px;
 }
 
+
+
+
+
 .nav{
     position: static;
     z-index: -1;
@@ -764,6 +768,12 @@ nav span a{
     }
 }
 
+@media only screen and (min-width: 1200px){
+    nav{
+        justify-content: center;
+        gap: 240px;
+    }
+}
 
 
 
@@ -780,4 +790,3 @@ nav span a{
         color: #91ac7d;
     }
 }
-/* PROBLEM di atas(ntah dari mana itu kurung asal kurawal tapi code berjalan bagus aja) */

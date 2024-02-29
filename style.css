@@ -282,7 +282,7 @@ nav span a{
 .about-skill li{
     display: flex;
     align-items: center;
-    margin-bottom: 3.5px;
+    margin-bottom: 4px;
 }
 
 
@@ -615,6 +615,7 @@ nav span a{
     }
     .about-skill{
         font-size: 1rem;
+        gap: 20px;
     }
     
     .study{
